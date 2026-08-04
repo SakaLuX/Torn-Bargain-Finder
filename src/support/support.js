@@ -1,6 +1,7 @@
 /**
  * Torn Toolkit
  * Support Manager
+ * Version: 0.2.0
  */
 
 export default class Support {
@@ -11,77 +12,88 @@ export default class Support {
 
     open() {
 
-        if (document.getElementById("tt-support-modal"))
+        if (document.getElementById("tt-support-overlay")) {
             return;
+        }
 
-        const modal = document.createElement("div");
+        const overlay = document.createElement("div");
+        overlay.id = "tt-support-overlay";
 
-        modal.id = "tt-support-modal";
+        overlay.innerHTML = `
 
-        modal.innerHTML = `
+<div id="tt-support-window">
 
-<div id="tt-modal">
+    <div id="tt-support-header">
 
-    <div id="tt-modal-header">
+        <span>❤️ Love Torn Toolkit?</span>
 
-        ❤️ Support Torn Toolkit
-
-        <button id="tt-close">✖</button>
+        <button id="tt-support-close">✖</button>
 
     </div>
 
-    <div id="tt-modal-body">
+    <div id="tt-support-body">
 
         <p>
-            Thank you for supporting Torn Toolkit!
+            Thank you for using Torn Toolkit!
+        </p>
+
+        <p>
+            If you enjoy this project and would like to support future updates, you can use one of the options below.
         </p>
 
         <hr>
 
-        <a target="_blank"
-        href="https://www.torn.com/profiles.php?XID=2380374">
+        <a
+            href="https://www.torn.com/profiles.php?XID=2380374"
+            target="_blank">
 
-            👤 SakaLuX [2380374]
-
-        </a>
-
-        <a target="_blank"
-        href="https://www.torn.com/sendmoney.php#/p=send&XID=2380374">
-
-            💵 Send Money
+            👤 Visit SakaLuX [2380374]
 
         </a>
 
-        <a target="_blank"
-        href="https://www.torn.com/item.php">
+        <a
+            href="https://www.torn.com/item.php"
+            target="_blank">
 
             💊 Send Xanax
 
         </a>
 
-        <a target="_blank"
-        href="https://www.torn.com/item.php">
+        <a
+            href="https://www.torn.com/item.php"
+            target="_blank">
 
             🎁 Send Items
 
         </a>
 
-        <a target="_blank"
-        href="https://github.com/SakaLuX/Torn-Toolkit">
+        <a
+            href="https://www.torn.com/sendmoney.php#/p=send&XID=2380374"
+            target="_blank">
 
-            ⭐ GitHub
+            💵 Send Money
 
         </a>
 
-        <a target="_blank"
-        href="https://github.com/SakaLuX/Torn-Toolkit/issues">
+        <a
+            href="https://github.com/SakaLuX/Torn-Toolkit"
+            target="_blank">
+
+            ⭐ GitHub Repository
+
+        </a>
+
+        <a
+            href="https://github.com/SakaLuX/Torn-Toolkit/issues"
+            target="_blank">
 
             🐞 Report Bug
 
         </a>
 
-        <a target="_blank"
-        href="https://github.com/SakaLuX/Torn-Toolkit/blob/main/CHANGELOG.md">
+        <a
+            href="https://github.com/SakaLuX/Torn-Toolkit/blob/main/CHANGELOG.md"
+            target="_blank">
 
             📜 Changelog
 
@@ -93,19 +105,15 @@ export default class Support {
 
 `;
 
-        document.body.appendChild(modal);
+        document.body.appendChild(overlay);
+
+        overlay.addEventListener("click", (event) => {
+
+            if (event.target === overlay) {
+                this.close();
+            }
+
+        });
 
         document
-            .getElementById("tt-close")
-            .onclick = () => modal.remove();
-
-        modal.onclick = e => {
-
-            if (e.target.id === "tt-support-modal")
-                modal.remove();
-
-        };
-
-    }
-
-}
+            .
