@@ -1,71 +1,120 @@
-#tt-panel{
+/**
+ * Torn Toolkit
+ * Panel UI
+ * Version 0.2.0
+ */
 
-position:fixed;
+#tt-panel {
 
-top:90px;
+    position: fixed;
+    top: 90px;
+    right: 20px;
 
-right:20px;
+    width: 320px;
 
-width:280px;
+    background: #1d1f24;
 
-background:#202124;
+    color: #ffffff;
 
-color:white;
+    border-radius: 14px;
 
-padding:15px;
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.45);
 
-border-radius:12px;
+    font-family: Arial, Helvetica, sans-serif;
 
-font-family:Arial,sans-serif;
+    z-index: 99999999;
 
-font-size:14px;
+    overflow: hidden;
 
-box-shadow:0 0 15px rgba(0,0,0,.4);
-
-z-index:999999;
-
-}
-
-#tt-header{
-
-font-size:20px;
-
-font-weight:bold;
-
-margin-bottom:15px;
-
-text-align:center;
+    animation: ttFade .25s ease;
 
 }
 
-.tt-row{
+#tt-header {
 
-display:flex;
+    display: flex;
 
-justify-content:space-between;
+    justify-content: space-between;
 
-align-items:center;
+    align-items: center;
 
-margin:8px 0;
+    background: #2b2f36;
+
+    padding: 14px 16px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+}
+
+.tt-section {
+
+    padding: 14px 16px;
 
 }
 
-#tt-support{
+.tt-row {
 
-width:100%;
+    display: flex;
 
-margin-top:10px;
+    justify-content: space-between;
 
-padding:10px;
+    align-items: center;
 
-border:none;
+    margin: 8px 0;
 
-border-radius:8px;
-
-cursor:pointer;
-
-background:#3DDC84;
-
-font-weight:bold;
+    font-size: 14px;
 
 }
+
+.tt-row span:first-child{
+
+    color:#d7d7d7;
+
+}
+
+.tt-row span:last-child{
+
+    font-weight:bold;
+
+}
+
+.tt-row input[type="checkbox"]{
+
+    cursor:pointer;
+
+    transform:scale(1.15);
+
+}
+
+#tt-panel hr{
+
+    border:none;
+
+    border-top:1px solid #353942;
+
+    margin:0;
+
+}
+
+.tt-section h3{
+
+    margin:0 0 12px 0;
+
+    font-size:16px;
+
+    color:#3DDC84;
+
+}
+
+.tt-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    padding
