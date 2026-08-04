@@ -7,7 +7,7 @@
 // @match        https://www.torn.com/*
 // @grant        none
 // @run-at       document-idle
-// ==/UserScript==
+// ==UserScript==
 
 import { TornToolkit } from "./core/app.js";
 
