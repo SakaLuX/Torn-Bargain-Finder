@@ -17,7 +17,9 @@ export default class Panel {
 
         panel.id = "tt-panel";
 
-        panel.innerHTML = `
+        const modules = this.app.modules.getAll();
+
+        let html = `
 
             <div id="tt-header">
 
@@ -43,45 +45,31 @@ export default class Panel {
 
             <hr>
 
-            <div class="tt-row">
+            <h4 style="margin:10px 0 5px 0;">Modules</h4>
 
-                <span>Bargain Finder</span>
+        `;
 
-                <input type="checkbox" checked>
+        modules.forEach(module => {
 
-            </div>
+            html += `
 
-            <div class="tt-row">
+                <div class="tt-row">
 
-                <span>Travel</span>
+                    <span>${module.name}</span>
 
-                <input type="checkbox">
+                    <input
+                        type="checkbox"
+                        data-module="${module.id}"
+                        ${module.enabled ? "checked" : ""}
+                    >
 
-            </div>
+                </div>
 
-            <div class="tt-row">
+            `;
 
-                <span>War</span>
+        });
 
-                <input type="checkbox">
-
-            </div>
-
-            <div class="tt-row">
-
-                <span>Crimes</span>
-
-                <input type="checkbox">
-
-            </div>
-
-            <div class="tt-row">
-
-                <span>Casino</span>
-
-                <input type="checkbox">
-
-            </div>
+        html += `
 
             <hr>
 
@@ -93,7 +81,21 @@ export default class Panel {
 
         `;
 
+        panel.innerHTML = html;
+
         document.body.appendChild(panel);
+
+        panel.querySelectorAll("input[data-module]").forEach(input => {
+
+            input.addEventListener("change", () => {
+
+                this.app.modules.toggle(
+                    input.dataset.module
+                );
+
+            });
+
+        });
 
     }
 
