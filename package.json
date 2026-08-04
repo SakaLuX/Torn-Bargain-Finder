@@ -4,6 +4,7 @@
   "description": "Advanced Torn PDA userscript.",
   "author": "SakaLuX",
   "license": "MIT",
+  "type": "module",
   "private": false,
   "scripts": {
     "dev": "vite",
