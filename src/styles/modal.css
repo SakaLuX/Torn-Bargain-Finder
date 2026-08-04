@@ -1,0 +1,73 @@
+/**
+ * Torn Toolkit
+ * Modal UI
+ * Version: 0.3.0
+ */
+
+#tt-modal-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.65);
+
+    backdrop-filter:blur(4px);
+
+    z-index:999999999;
+
+    animation:ttFadeIn .18s ease;
+
+}
+
+#tt-modal{
+
+    width:90%;
+
+    max-width:450px;
+
+    background:#1d1f24;
+
+    color:#ffffff;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.55);
+
+    animation:ttModalOpen .18s ease;
+
+}
+
+#tt-modal-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#2b2f36;
+
+    padding:16px 18px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+}
+
+#tt-modal-close{
+
+    border:none;
+
+    background:none;
+
+    color
